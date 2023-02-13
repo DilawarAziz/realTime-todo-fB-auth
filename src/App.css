@@ -1,0 +1,293 @@
+*{
+  list-style: none;
+box-sizing: border-box;
+margin: 0px;
+padding:0px;
+font-family: ' sans-serif', Tahoma, Geneva, Verdana,;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+.main{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+ background-color: #ffeb3b2e;
+ flex-direction: column;
+ /* background-image: url('todoimg.jpg');
+ background-repeat: no-repeat;
+ background-size:100%; */
+}
+.navbar{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background-color: #41d9e178;
+  width: 100%;
+  padding: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+.navbar>div{
+  display: flex;
+}
+#userIcon{
+  width: 44px;
+    height: 31px;
+    cursor: pointer;
+}
+.logo{
+  color: #f5ebea;
+  width: 32px;
+  height: 32px;
+  margin: 0px 12px;
+}
+.dltIcon{
+  color: orange;
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+  cursor: pointer;
+  margin-left: 6px;
+}
+.delete-button{
+  border: none;
+  background-color: white;
+}
+#sub-main{
+  margin-top: 40px;
+  height: 85vh;
+  background-color: white;
+  width: 400px;
+  padding: 20px;
+  border-radius: 5px;
+}
+#sub-main>img{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
+
+}
+
+.input-main{
+  width:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.add-todo{
+  padding:5px;
+  border-radius: 5px;
+  border: 2px solid royalblue;
+  cursor: pointer;
+  margin-left: 2px !important;
+    font-size: 10px !important;
+    align-self: flex-end;
+    padding: 5px 2px !important;
+
+}
+.todo-input{
+  width: 85%;
+  font-size: 16px;
+  border: navajowhite;
+  border-bottom: 2px solid royalblue;
+  padding: 3px;
+  outline: none;
+  height: auto;
+  resize: none;
+}
+#ul{
+  overflow: auto;
+  height: 446px;
+  margin-top: 12px;
+}
+#ul>p{
+  text-align: center;
+  color: orange;
+}
+ul>li{
+  display: flex;
+  justify-content: space-between;
+  margin: 7px 12px;
+  align-items: center;
+  /* width: 100%; */
+  word-break: break-all;
+  padding: 7px 16px;
+  box-shadow: 0px 0px 3px gainsboro;
+  color: #070505a8;;
+}
+.SignUp-main{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+ background-color: #01121414;
+ flex-direction: column;
+}
+.SignUp-sub-main{
+  background-color: white;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: space-around; */
+  /* align-items: center; */
+  text-align: center;
+  padding: 25px 104px;
+  border-radius: 11px;
+  max-width: 634px;
+}
+.SignUp-sub-main>p{
+margin: 12px;
+}
+.Sign-input-main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Sign-input-main>p{
+  color: red;
+    text-align: start !important;
+    width: 100%;
+    padding-left: 16px;
+    height: 16px;
+}
+.Sign-input-main>button{
+  display: flex;
+    justify-content: center;
+  border: none;
+  margin-top: 12px;
+  padding: 10px 46px;
+  background-color: #4169e1ad;
+  border-radius: 20px;
+  width: 79%;
+  color: white;
+  background-color: #ff5722;
+  cursor: pointer;
+}
+.Sign-input-main>input{
+  margin-top: 12px;
+  outline: none;
+  text-align: center;
+  font-size: 14px;
+  padding: 12px;
+  border: none;
+  background-color: #01121414;
+  border-radius: 20px;
+  width: 100%;
+}
+.Sign-input-main>input:focus{
+  background-color: rgba(7, 168, 168, 0.164);
+}.Sign-input-main>button:hover{
+  background-color: rgba(255, 166, 0, 0.801);
+}
+.login-with-main>button{
+  cursor: pointer;
+  border: none;
+  margin: 6px;
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 46px;
+  background-color: #4169e1ad;
+  border-radius: 20px;
+  color: white;
+}
+.login-with-main>button>svg{
+margin-right: 6px;
+}
+a{
+  cursor: pointer;
+  color: blue;
+  font-weight: bold;
+
+}
+.dialaugBox{
+  position: absolute;
+  top: 37px;
+  right: 31px;
+  background-color: white;
+  width: 300px;
+  height: 260px;
+  border-radius: 12px;
+  display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    z-index: 3;
+  }
+  .dialaugBox>hr{
+    width: 100%;
+    margin-top: 11px
+  }
+.dialaugBox>img{
+  width: 60px;
+  height: 60px;
+  box-shadow: 0px 0px 2px 3px #80808059;
+  border-radius: 100%;
+}
+.dialaugBox>p{
+  padding: 0px 15px;
+  border-radius: 5px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-size: 18px;
+}
+.dialaugBox>p>svg{
+margin-right: 12px;
+}
+.dialaugBox>button{
+  margin-top: 20px;
+  cursor: pointer;
+  border: none;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+}
+.dialaugBox>button>svg{
+margin-right: 12px;
+}
+.dialaugBox>button:hover{
+background-color: #03a9f429;
+}
+
+.form-label-file{
+position: relative;
+top: -5px;
+}
+.todos-sponer{
+  text-align: center;
+    align-self: center;
+    margin: 161px auto;
+    width: 50px;
+    height: 50px;
+}
+.spinerpt{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}

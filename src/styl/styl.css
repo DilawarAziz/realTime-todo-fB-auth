@@ -1,0 +1,68 @@
+@media only screen and (min-width: 500px) and  (max-width: 650px) {
+  
+.SignUp-sub-main {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 25px 70px;
+    border-radius: 11px;
+    margin: 0px 10px;
+}
+}
+@media only screen and (min-width: 0px) and  (max-width: 500px) {
+    .login-with-main>button {
+        padding: 9px 25px;
+    }
+    .main-loader{
+        height: 150px !important;
+        width: 100px !important; 
+    }
+    .navbar {
+padding: 3px;
+    }
+    .dialaugBox {
+        position: absolute;
+        top: 26px;
+        right: 17px;
+        background-color: white;
+        width: 251px;
+        height: 260px;
+    }
+    #userIcon {
+        width: 27px;
+        height: 27px;
+        cursor: pointer;
+    }
+    .navbar>div>h2{
+       align-self: center;
+       font-size:13px;
+    }
+    .logo{
+        margin: 0px 5px;
+        width: 26px;
+        height: 26px;
+    }
+    .add-todo {
+       
+        padding: 4px 0px !important;
+    }
+    #sub-main {
+        margin-top: 34px;
+        height: 100vh;
+        width: 100%;
+        padding: 26px 3px;
+        border-radius: 0px;
+    }
+.SignUp-sub-main {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1px 9px;
+    margin: 0px 0px;
+    width: 100%;
+    height: 100vh;
+    font-size: 13px;
+}
+}
