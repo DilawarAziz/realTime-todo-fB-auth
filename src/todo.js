@@ -186,7 +186,6 @@ function Todo({ useruid }) {
       }
     );
   };
-
   return (
     <div className="main">
       <div className="navbar">
@@ -221,10 +220,10 @@ function Todo({ useruid }) {
             <CameraAltIcon color="primary" fontSize="small" />
           </label>
           <hr />
-          <p>
+         {useruid?.email&& <p>
             <HiOutlineMail />
             {useruid?.email}
-          </p>
+          </p>}
           <p>
             <FaRegUser />
             {userinfo?.name || useruid?.displayName}
@@ -312,7 +311,7 @@ function Todo({ useruid }) {
                 <button className="delete-button" onClick={() => editTodo(i)}>
                   <FiEdit className="dltIcon" />
                 </button>
-                {todoIndex != i && (
+                {todoIndex !== i && (
                   <button className="delete-button" onClick={() => delTodo(i)}>
                     <MdOutlineDelete className="dltIcon" color="red" />
                   </button>

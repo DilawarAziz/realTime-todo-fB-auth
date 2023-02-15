@@ -13,12 +13,14 @@ import { getAuth,signInWithPopup,onAuthStateChanged,FacebookAuthProvider ,Google
 import { useState, useEffect } from "react";
 import RecoverPass from "./recoverPass";
 import { Watch } from "react-loader-spinner";
+import { getDatabase, ref, update } from "firebase/database";
+import app from "./firebase";
 
 function App() {
   const [useruid, setuseruid] = useState("");
   const [isRun, setIsRun] = useState(true);
   const [spiner, setspiner] = useState(true);
-
+  const db = getDatabase(app);
   const auth = getAuth();
 const provider = new GoogleAuthProvider();
 const fbProvider = new FacebookAuthProvider();
@@ -32,26 +34,18 @@ const fbProvider = new FacebookAuthProvider();
         setIsRun(false);
       }
     });
-  }, []);
+  },[]);
   let googleLogin = ()=>{
-    const auth = getAuth();
 signInWithPopup(auth, provider)
   .then((result) => {
-    // This gives you a Google Access Token. You can use it to access the Google API.
-    const credential = GoogleAuthProvider.credentialFromResult(result);
-    const token = credential.accessToken;
-    // The signed-in user info.
     const user = result.user;
-    // ...
+    update(ref(db, "users/" + user.uid+ "/userdata"), {
+      name:user.displayName,
+      email:user.email,
+    });
   }).catch((error) => {
-    // Handle Errors here.
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    // The email of the user's account used.
     const email = error.customData.email;
-    // The AuthCredential type that was used.
-    const credential = GoogleAuthProvider.credentialFromError(error);
-    // ...
+    console.log(email)
   });
 
   }
@@ -60,12 +54,10 @@ signInWithPopup(auth, provider)
   .then((result) => {
     // The signed-in user info.
     const user = result.user;
-
-    // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-    const credential = FacebookAuthProvider.credentialFromResult(result);
-    const accessToken = credential.accessToken;
-console.log(credential,accessToken)
-    // ...
+    update(ref(db, "users/" + user.uid+ "/userdata"), {
+      name:user.displayName,
+      email:user.email,
+    });
   })
   .catch((error) => {
     // Handle Errors here.
@@ -73,10 +65,10 @@ console.log(credential,accessToken)
     const errorMessage = error.message;
     // The email of the user's account used.
     const email = error.customData.email;
-    // The AuthCredential type that was used.
+    // AuthCredential type that was used.
     const credential = FacebookAuthProvider.credentialFromError(error);
-console.log(credential,email,error,errorMessage)
     // ...
+   console.log(email,errorMessage,credential,errorCode)
   });
   }
   if (spiner) {
